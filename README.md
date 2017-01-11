@@ -1,0 +1,1 @@
+# my_rigged_vim
