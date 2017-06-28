@@ -85,7 +85,7 @@ vnoremap <F1> :set invfullscreen<CR>
 map <leader>q gqip
 
 " Visualize tabs and newlines
-set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,eol:¬
 " Uncomment this to enable by default:
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
@@ -102,15 +102,17 @@ set guifont=Monospace\ 14
 
 "to enable solarized dark
 syntax enable
-"set background=dark
-"colorscheme solarized
+set background=dark
+colorscheme solarized
 
 "to enable badwolf"
 "colorscheme badwolf
 
 "to enable desert
-colorscheme desert
+"colorscheme desert
 
+"For colour brackets
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 " Give a shortcut key to NERD Tree
 map <C-q> :NERDTreeToggle<CR>
@@ -127,12 +129,20 @@ map <C-q><C-w> :NERDTreeFind<CR>
 "autocmd VimEnter * wincmd p
 
 "enable syntax folding
-set foldmethod=syntax
+set foldmethod=manual
 
 "Set only if you have tags
 set tags=./tags;
-"set tags+=~/.vim/tags/CTAGS
-"nmap <C-Enter> <C-w><C-]><C-w>T
+set tags+=~/.vim/tags/OVM
+nmap <C-Enter> <C-w><C-]><C-w>T
 
 
+" Command to move among tabs in Konsole-style
+map <A-Right> gt
+map <A-Left> gT
 
+"Move between windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
